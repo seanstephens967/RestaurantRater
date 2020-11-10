@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -11,5 +12,10 @@ namespace RestaurantRater.Models
         public int Name { get; set; }
         public int Address { get; set; }
         public int Rating { get; set; }
+    }
+
+    public class RestaurantDbContext : DbContext
+    {
+        public DbSet<Restaurant> Restaurants { get; set; }
     }
 }
